@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Journal - Arnold</title>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <a href="index.html" class="logo">Arnold</a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="educ.html">Educational Tour</a>
+            <a href="journal.html" class="active">Journal</a>
+            <a href="cert.html">Certificate</a>
+        </nav>
+    </header>
+
+    <!-- JOURNAL SECTION -->
+    <section class="education">
+        <h2 class="heading">Learning <span>Journal</span></h2>
+
+        <div class="edu-container">
+
+            <!-- CARD 1 -->
+            <div class="edu-box">
+                <img src="/images/pldtjournal.jpg" alt="Week 1">
+                <h3>PLDT, INC.</h3>
+                <span class="year">November, 14, 2025</span>
+                <p>
+                    During our educational tour at PLDT, Inc., I learned about the company’s role in providing reliable telecommunication
+                    services across the country. I observed how their infrastructure is designed to support internet, telephone, and data
+                    communication.
+                </p>
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="edu-box">
+                <img src="/images/vitrojourn.jpg" alt="Week 2">
+                <h3>VITRO, INC.</h3>
+                <span class="year">November, 14, 2025</span>
+                <p>
+                Our visit to Vitro, Inc., a data center facility, gave me insights into how data centers operate and maintain system
+                reliability. I learned about the importance of backup power systems, cooling mechanisms, and security measures to
+                protect critical data.
+                </p>
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="edu-box">
+                <img src="images/jairojourn.jpg" alt="Week 3">
+                <h3>JAIROSOFT, INC.</h3>
+                <span class="year">November, 14, 2025</span>
+                <p>
+                    At Jairosoft, Inc., I learned about the company’s work environment and how teams collaborate in developing software and
+                    IT solutions. I observed how different departments contribute to project development and client support.
+                </p>
+            </div>
+
+            <!-- CARD 4 -->
+            <div class="edu-box">
+                <img src="images/911res.jpg" alt="Week 4">
+                <h3>DAVAO CITY CENTRAL COMMUNICATIONS AND EMERGENCY RESPONSE CENTER</h3>
+                <span class="year">November, 14, 2025</span>
+                <p>
+                During our tour at the Davao City Central Communications and Emergency Response Center, I learned how emergency calls
+                are received, monitored, and dispatched efficiently.
+                </p>
+            </div>
+
+            <!-- CARD 5 -->
+            <div class="edu-box">
+                <img src="images/journal eva.jpg" alt="Week 5">
+                <h3>IMPRESSION SHEET</h3>
+                <span class="year">November, 14, 2025</span>
+                <p>
+                The educational tour was a valuable learning experience that broadened my understanding of technology, communication
+                systems, and workplace operations.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- IMAGE MODAL -->
+    <div class="img-modal">
+        <img src="" alt="Expanded Image">
+    </div>
+
+    <!-- SCRIPT FOR MODAL -->
+    <script>
+        const modal = document.querySelector('.img-modal');
+        const modalImg = modal.querySelector('img');
+
+        document.querySelectorAll('.edu-box img').forEach(img => {
+            img.addEventListener('click', () => {
+                modalImg.src = img.src;
+                modal.style.display = 'flex';
+            });
+        });
+
+        modal.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+    </script>
+
+</body>
+
+</html>
