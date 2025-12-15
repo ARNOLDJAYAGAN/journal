@@ -8,26 +8,31 @@
     <title>Arnold Blog</title>
 
     <style>
-        /* Blog Page Layout */
+        /* =====================
+           BLOG SECTION
+        ===================== */
         .blog-section {
-            height: 100vh; /* full screen */
-            padding: 2rem 9%;
+            min-height: 100vh;
+            padding: 8rem 9% 4rem;
             display: flex;
             flex-direction: column;
         }
 
-        .blog-title{
+        .blog-title {
             font-size: 4rem;
             font-weight: 700;
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
             color: khaki;
             text-align: center;
         }
-        .blog-title span{
+
+        .blog-title span {
             color: white;
-            
         }
 
+        /* =====================
+           BLOG GRID
+        ===================== */
         .blog-container {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -37,7 +42,7 @@
         .blog-card {
             background-color: #111;
             padding: 1.5rem;
-            border-radius: 10px;
+            border-radius: 1.2rem;
             border: 1px solid khaki;
             transition: 0.3s ease;
         }
@@ -51,31 +56,32 @@
             width: 100%;
             height: 200px;
             object-fit: cover;
-            border-radius: 8px;
+            border-radius: 1rem;
             margin-bottom: 1rem;
+            cursor: pointer;
         }
 
         .blog-card h3 {
             font-size: 2rem;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
             color: khaki;
         }
 
         .blog-card p {
             color: #ccc;
             font-size: 1.4rem;
+            line-height: 1.6;
         }
 
-        /* Modal for clicked images */
+        /* =====================
+           IMAGE MODAL
+        ===================== */
         .img-modal {
             display: none;
             position: fixed;
             z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.9);
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.9);
             justify-content: center;
             align-items: center;
             cursor: pointer;
@@ -88,12 +94,70 @@
             border-radius: 1rem;
             box-shadow: 0 0 25px khaki;
         }
+
+        /* =====================
+           TABLET RESPONSIVE
+        ===================== */
+        @media (max-width: 992px) {
+            .blog-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .blog-title {
+                font-size: 3.4rem;
+            }
+        }
+
+        /* =====================
+           MOBILE RESPONSIVE
+        ===================== */
+        @media (max-width: 768px) {
+
+            .blog-section {
+                padding: 7rem 5% 3rem;
+            }
+
+            .blog-container {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .blog-title {
+                font-size: 3rem;
+            }
+
+            .blog-card img {
+                height: 180px;
+            }
+
+            .blog-card h3 {
+                font-size: 1.8rem;
+            }
+
+            .blog-card p {
+                font-size: 1.3rem;
+            }
+        }
+
+        /* =====================
+           SMALL PHONES
+        ===================== */
+        @media (max-width: 480px) {
+
+            .blog-title {
+                font-size: 2.6rem;
+            }
+
+            .blog-card img {
+                height: 160px;
+            }
+        }
     </style>
 </head>
 
 <body>
 
-    <!-- Header -->
+    <!-- HEADER -->
     <header>
         <a href="index.html" class="logo">Arnold</a>
 
@@ -112,7 +176,6 @@
 
         <div class="blog-container">
 
-            <!-- ROW 1 -->
             <div class="blog-card">
                 <img src="images/firstday.jpg" alt="">
                 <h3>Bus – Davao Tour</h3>
@@ -131,7 +194,6 @@
                 <p>This photo features the exterior signage of the PLDT and Smart building.</p>
             </div>
 
-            <!-- ROW 2 -->
             <div class="blog-card">
                 <img src="images/vitro.jpg" alt="">
                 <h3>PLDT Presentation Session</h3>
@@ -150,7 +212,6 @@
                 <p>This image shows an informational display about the VITRO Data Center.</p>
             </div>
 
-            <!-- ROW 3 -->
             <div class="blog-card">
                 <img src="images/vikings.jpg" alt="">
                 <h3>Restaurant Table Setup</h3>
@@ -177,7 +238,7 @@
         <img src="" alt="Expanded Image">
     </div>
 
-    <!-- SCRIPT FOR MODAL -->
+    <!-- MODAL SCRIPT -->
     <script>
         const modal = document.querySelector('.img-modal');
         const modalImg = modal.querySelector('img');
